@@ -15,6 +15,7 @@ dst = cv2.dilate(dst, None)
 # Threshold for an optimal value, it may vary depending on the image.
 img[dst > 0.01 * dst.max()] = [0, 0, 255]
 
+cv2.imwrite("Harris_corner.jpg", img)
 cv2.imshow('dst', img)
-if cv2.waitKey(0) & 0xff == 27:
+if cv2.waitKey(0):
     cv2.destroyAllWindows()
